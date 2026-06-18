@@ -1,6 +1,45 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <configuration>
     <context>
+        <name>IBM-W3ID-Context</name>
+        <desc>IBM W3ID Authentication Context</desc>
+        <inscope>true</inscope>
+
+        <incregexes>
+            https://doc-enrich-frontend-document-enrichment\.ae-sap-cluster-test-2322d3421b77f2abeee72f9925acd471-0000\.us-south\.containers\.appdomain\.cloud.*
+        </incregexes>
+
+        <authentication>
+            <type>1</type>
+            <loginurl>
+                https://preprod.login.w3.ibm.com/pkmslogin.form
+            </loginurl>
+
+            <loginrequestdata>
+                username={%username%}&amp;password={%password%}
+            </loginrequestdata>
+        </authentication>
+
+        <session>
+            <type>0</type>
+        </session>
+
+        <users>
+            <user>
+                <name>Authenticated User</name>
+                <enabled>true</enabled>
+                <credentials>
+                    username=Manoj.Singh8@ibm.com&amp;
+                    password={%password%}
+                </credentials>
+            </user>
+        </users>
+
+        <forceduser>0</forceduser>
+    </context>
+</configuration><?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<configuration>
+    <context>
         <name>https://preprod.login.w3.ibm.com</name>
         <desc/>
         <inscope>true</inscope>
