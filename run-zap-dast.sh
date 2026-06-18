@@ -8,7 +8,8 @@ mkdir -p reports
 
 zap-baseline.py \
   -t "${TARGET_URL}" \
-  -n security/context/IBM-W3ID-Context.context \
+  -n ZapScripts-Context/Authentication Test.context-IBMSSO
+ \
   -U "Authenticated User" \
   -j \
   -I \
