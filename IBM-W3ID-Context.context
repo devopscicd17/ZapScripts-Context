@@ -1,5 +1,77 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <configuration>
+  <context>
+    <name>IBM-W3ID-Context</name>
+    <desc>IBM W3ID Authentication Context</desc>
+
+    <inscope>true</inscope>
+
+    <incregexes>
+      https://doc-enrich-frontend-document-enrichment\.ae-sap-cluster-test-2322d3421b77f2abeee72f9925acd471-0000\.us-south\.containers\.appdomain\.cloud.*
+    </incregexes>
+
+    <excregexes/>
+
+    <tech>
+      <include>Language.JavaScript</include>
+      <include>Framework.React</include>
+      <include>OS.Linux</include>
+      <include>WS.Apache</include>
+    </tech>
+
+    <urlparser>
+      <class>org.zaproxy.zap.model.StandardParameterParser</class>
+      <config>{"kvps":"&amp;","kvs":"=","struct":[]}</config>
+    </urlparser>
+
+    <postparser>
+      <class>org.zaproxy.zap.model.StandardParameterParser</class>
+      <config>{"kvps":"&amp;","kvs":"=","struct":[]}</config>
+    </postparser>
+
+    <authentication>
+      <type>1</type>
+
+      <loginurl>
+        https://preprod.login.w3.ibm.com/authsvc/mtfim/sps/authsvc
+      </loginurl>
+
+      <loginrequestdata>
+        operation=verify&amp;
+        username={%username%}&amp;
+        password={%password%}
+      </loginrequestdata>
+
+      <loggedinindicator>
+        dashboard
+      </loggedinindicator>
+
+      <loggedoutindicator>
+        Sign in with your w3id password
+      </loggedoutindicator>
+    </authentication>
+
+    <users>
+      <user>
+        1;true;
+        username=manoj.singh8@ibm.com;
+        password=JaiShreeSitaRamHanumanG3517
+      </user>
+    </users>
+
+    <forceduser>1</forceduser>
+
+    <session>
+      <type>2</type>
+    </session>
+
+    <authorization>
+      <type>0</type>
+    </authorization>
+
+  </context>
+</configuration><?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<configuration>
     <context>
         <name>IBM-W3ID-Context</name>
         <desc>IBM W3ID Authentication Context</desc>
