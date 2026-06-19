@@ -19,10 +19,8 @@ ls -l "/zap/wrk/ZapScripts-Context/IBM-W3ID-Context.context"
 zap-baseline.py \
   -t "${TARGET_URL}" \
   -n "/zap/wrk/ZapScripts-Context/IBM-W3ID-Context.context" \
-  -U "Authenticated User" \
   -j \
   -I \
-  -d \
   -r reports/zap-report.html
 
 echo "================================"
