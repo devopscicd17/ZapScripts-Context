@@ -1,121 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <configuration>
-  <context>
-    <name>IBM-W3ID-Context</name>
-    <desc>IBM W3ID Authentication Context</desc>
-
-    <inscope>true</inscope>
-
-    <incregexes>
-      https://doc-enrich-frontend-document-enrichment\.ae-sap-cluster-test-2322d3421b77f2abeee72f9925acd471-0000\.us-south\.containers\.appdomain\.cloud.*
-    </incregexes>
-
-    <excregexes/>
-
-    <tech>
-      <include>Language.JavaScript</include>
-      <include>Framework.React</include>
-      <include>OS.Linux</include>
-      <include>WS.Apache</include>
-    </tech>
-
-    <urlparser>
-      <class>org.zaproxy.zap.model.StandardParameterParser</class>
-      <config>{"kvps":"&amp;","kvs":"=","struct":[]}</config>
-    </urlparser>
-
-    <postparser>
-      <class>org.zaproxy.zap.model.StandardParameterParser</class>
-      <config>{"kvps":"&amp;","kvs":"=","struct":[]}</config>
-    </postparser>
-
-    <authentication>
-      <type>1</type>
-
-      <loginurl>
-        https://preprod.login.w3.ibm.com/authsvc/mtfim/sps/authsvc
-      </loginurl>
-
-      <loginrequestdata>
-        operation=verify&amp;
-        username={%username%}&amp;
-        password={%password%}
-      </loginrequestdata>
-
-      <loggedinindicator>
-        dashboard
-      </loggedinindicator>
-
-      <loggedoutindicator>
-        Sign in with your w3id password
-      </loggedoutindicator>
-    </authentication>
-
-    <users>
-      <user>
-        1;true;
-        username=manoj.singh8@ibm.com;
-        password=JaiShreeSitaRamHanumanG3517
-      </user>
-    </users>
-
-    <forceduser>1</forceduser>
-
-    <session>
-      <type>2</type>
-    </session>
-
-    <authorization>
-      <type>0</type>
-    </authorization>
-
-  </context>
-</configuration><?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<configuration>
     <context>
-        <name>IBM-W3ID-Context</name>
-        <desc>IBM W3ID Authentication Context</desc>
-        <inscope>true</inscope>
-
-        <incregexes>
-            https://doc-enrich-frontend-document-enrichment\.ae-sap-cluster-test-2322d3421b77f2abeee72f9925acd471-0000\.us-south\.containers\.appdomain\.cloud.*
-        </incregexes>
-
-        <authentication>
-            <type>1</type>
-            <loginurl>
-                https://preprod.login.w3.ibm.com/pkmslogin.form
-            </loginurl>
-
-            <loginrequestdata>
-                username={%username%}&amp;password={%password%}
-            </loginrequestdata>
-        </authentication>
-
-        <session>
-            <type>0</type>
-        </session>
-
-        <users>
-            <user>
-                <name>Authenticated User</name>
-                <enabled>true</enabled>
-                <credentials>
-                    username=Manoj.Singh8@ibm.com&amp;
-                    password=JaiShreeSitaRamHanumanG3517
-                </credentials>
-            </user>
-        </users>
-
-        <forceduser>0</forceduser>
-    </context>
-</configuration><?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<configuration>
-    <context>
-        <name>https://preprod.login.w3.ibm.com</name>
+        <name>IBM Auth</name>
         <desc/>
         <inscope>true</inscope>
-        <incregexes>https://preprod.login.w3.ibm.com.*</incregexes>
+        <incregexes>https://preprod.login.w3.ibm.com/authsvc/mtfim/sps/authsvc\?StateId\=654f1453-fa34-46fa-9b97-cd76016f98b2.*</incregexes>
         <tech>
             <include>Db</include>
             <include>Db.CouchDB</include>
@@ -165,110 +54,27 @@
             <config>{"kvps":"&amp;","kvs":"=","struct":[]}</config>
         </postparser>
         <authentication>
-            <type>0</type>
+            <type>2</type>
             <strategy>EACH_RESP</strategy>
             <pollurl/>
             <polldata/>
             <pollheaders/>
             <pollfreq>60</pollfreq>
             <pollunits>REQUESTS</pollunits>
-        </authentication>
-        <forceduser>-1</forceduser>
-        <session>
-            <type>0</type>
-        </session>
-        <authorization>
-            <type>0</type>
-            <basic>
-                <header/>
-                <body/>
-                <logic>AND</logic>
-                <code>-1</code>
-            </basic>
-        </authorization>
-    </context>
-</configuration>
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<configuration>
-    <context>
-        <name>Authentication Test</name>
-        <desc/>
-        <inscope>true</inscope>
-        <incregexes>https://prepiam.ice.ibmcloud.com.*</incregexes>
-        <tech>
-            <include>Db</include>
-            <include>Db.CouchDB</include>
-            <include>Db.Firebird</include>
-            <include>Db.HypersonicSQL</include>
-            <include>Db.IBM DB2</include>
-            <include>Db.MariaDB</include>
-            <include>Db.Microsoft Access</include>
-            <include>Db.Microsoft SQL Server</include>
-            <include>Db.MongoDB</include>
-            <include>Db.MySQL</include>
-            <include>Db.Oracle</include>
-            <include>Db.PostgreSQL</include>
-            <include>Db.SAP MaxDB</include>
-            <include>Db.SQLite</include>
-            <include>Db.Sybase</include>
-            <include>Framework</include>
-            <include>Framework.Next.js</include>
-            <include>Framework.React</include>
-            <include>Language</include>
-            <include>Language.ASP</include>
-            <include>Language.C</include>
-            <include>Language.JSP/Servlet</include>
-            <include>Language.Java</include>
-            <include>Language.Java.Spring</include>
-            <include>Language.JavaScript</include>
-            <include>Language.PHP</include>
-            <include>Language.Python</include>
-            <include>Language.Ruby</include>
-            <include>Language.XML</include>
-            <include>OS</include>
-            <include>OS.Linux</include>
-            <include>OS.MacOS</include>
-            <include>OS.Windows</include>
-            <include>SCM</include>
-            <include>SCM.Git</include>
-            <include>SCM.SVN</include>
-            <include>WS</include>
-            <include>WS.Apache</include>
-            <include>WS.IIS</include>
-            <include>WS.Tomcat</include>
-        </tech>
-        <urlparser>
-            <class>org.zaproxy.zap.model.StandardParameterParser</class>
-            <config>{"kvps":"&amp;","kvs":"=","struct":[]}</config>
-        </urlparser>
-        <postparser>
-            <class>org.zaproxy.zap.model.StandardParameterParser</class>
-            <config>{"kvps":"&amp;","kvs":"=","struct":[]}</config>
-        </postparser>
-        <authentication>
-            <type>8</type>
-            <strategy>POLL_URL</strategy>
-            <pollurl>https://prepiam.ice.ibmcloud.com/oauth2/authorize?response_type=token&amp;client_id=usc-client&amp;pfidpadapterid=htmlform&amp;scope=openid%20profile&amp;redirect_uri=https%3A%2F%2Fprepiam.ice.ibmcloud.com%2Fusc%2Fauthentication%2Fcallback%2F&amp;state=WidWB0alXvUkg52f1Oyo4CPsBQtbfSA1</pollurl>
-            <polldata/>
-            <pollheaders>referer: https://prepiam.ice.ibmcloud.com/usc/
-</pollheaders>
-            <pollfreq>60</pollfreq>
-            <pollunits>REQUESTS</pollunits>
-            <loggedin>\Q 303 See Other\E</loggedin>
-            <loggedout>\Q 302 Moved Temporarily\E</loggedout>
-            <script>
-                <name>prepiam.ice.ibmcloud.com</name>
-                <params>c2NyaXB0RW5naW5l:TW96aWxsYSBaZXN0&amp;c2NyaXB0:QzpcVXNlcnNcTWFub2pTaW5naFxaQVBcc2NyaXB0c1xzY3JpcHRzXGF1dGhlbnRpY2F0aW9uXHByZXBpYW0uaWNlLmlibWNsb3VkLmNvbS56c3Q=</params>
-                <loginpagewait>10</loginpagewait>
-                <minwaitfor>0</minwaitfor>
-            </script>
+            <loggedin>dashboard</loggedin>
+            <loggedout>Logout</loggedout>
+            <form>
+                <loginurl>https://preprod.login.w3.ibm.com/authsvc/mtfim/sps/authsvc?PolicyId=urn:ibm:security:authentication:asf:onpremldap&amp;identity_source_id=4cf64c6e-57e6-4a01-bdc4-806eb3f87d42&amp;Target=https%3A%2F%2Fpreprod.login.w3.ibm.com%2Fsaml%2Fsps%2Fauth</loginurl>
+                <loginbody>operation=verify&amp;username={%username%}&amp;password={%password%}</loginbody>
+                <loginpageurl>https://preprod.login.w3.ibm.com/authsvc/mtfim/sps/authsvc?PolicyId=urn:ibm:security:authentication:asf:onpremldap&amp;identity_source_id=4cf64c6e-57e6-4a01-bdc4-806eb3f87d42&amp;Target=https%3A%2F%2Fpreprod.login.w3.ibm.com%2Fsaml%2Fsps%2Fauth</loginpageurl>
+            </form>
         </authentication>
         <users>
-            <user>366;true;bm90LWN1cnJlbnRseS11c2Vk;8;cGFzc3dvcmQ=:bm90LWN1cnJlbnRseS11c2Vk&amp;dXNlcm5hbWU=:bm90LWN1cnJlbnRseS11c2Vk~</user>
+            <user>490;false;bWFub2ouc2luZ2g4QGlibS5jb20=;2;AA==</user>
         </users>
-        <forceduser>-1</forceduser>
+        <forceduser>490</forceduser>
         <session>
-            <type>3</type>
+            <type>0</type>
         </session>
         <authorization>
             <type>0</type>
