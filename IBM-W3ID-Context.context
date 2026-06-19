@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <configuration>
     <context>
-        <name>IBM Auth</name>
+        <name>GET:/(instance,suite,teamId,teamName)</name>
         <desc/>
         <inscope>true</inscope>
-        <incregexes>https://preprod.login.w3.ibm.com/authsvc/mtfim/sps/authsvc\?StateId\=654f1453-fa34-46fa-9b97-cd76016f98b2.*</incregexes>
+        <incregexes>https://doc-enrich-frontend-document-enrichment.ae-sap-cluster-test-2322d3421b77f2abeee72f9925acd471-0000.us-south.containers.appdomain.cloud.*</incregexes>
         <tech>
             <include>Db</include>
             <include>Db.CouchDB</include>
@@ -62,17 +62,16 @@
             <pollfreq>60</pollfreq>
             <pollunits>REQUESTS</pollunits>
             <loggedin>dashboard</loggedin>
-            <loggedout>Logout</loggedout>
             <form>
-                <loginurl>https://preprod.login.w3.ibm.com/authsvc/mtfim/sps/authsvc?PolicyId=urn:ibm:security:authentication:asf:onpremldap&amp;identity_source_id=4cf64c6e-57e6-4a01-bdc4-806eb3f87d42&amp;Target=https%3A%2F%2Fpreprod.login.w3.ibm.com%2Fsaml%2Fsps%2Fauth</loginurl>
+                <loginurl>https://preprod.login.w3.ibm.com/authsvc/mtfim/sps/authsvc?StateId=9ee686cc-cf9b-4955-9a90-13022c281a5b</loginurl>
                 <loginbody>operation=verify&amp;username={%username%}&amp;password={%password%}</loginbody>
                 <loginpageurl>https://preprod.login.w3.ibm.com/authsvc/mtfim/sps/authsvc?PolicyId=urn:ibm:security:authentication:asf:onpremldap&amp;identity_source_id=4cf64c6e-57e6-4a01-bdc4-806eb3f87d42&amp;Target=https%3A%2F%2Fpreprod.login.w3.ibm.com%2Fsaml%2Fsps%2Fauth</loginpageurl>
             </form>
         </authentication>
         <users>
-            <user>490;false;bWFub2ouc2luZ2g4QGlibS5jb20=;2;AA==</user>
+            <user>791;true;SWJtVXNlcg==;2;TWFub2ouU2luZ2g4QGlibS5jb20=~SmFpU2hyZWVTaXRhUmFtSGFudW1hbkczNTE3~</user>
         </users>
-        <forceduser>490</forceduser>
+        <forceduser>791</forceduser>
         <session>
             <type>0</type>
         </session>
