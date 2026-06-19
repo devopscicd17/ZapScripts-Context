@@ -2,7 +2,7 @@
 
 set -ex
 
-TARGET_URL="${APP_URL}"
+TARGET_URL="https://doc-enrich-frontend-document-enrichment.ae-sap-cluster-test-2322d3421b77f2abeee72f9925acd471-0000.us-south.containers.appdomain.cloud/?teamId=667d2995f046a740e049d6e0&teamName=SAP%20And%20Friends&instance=staging&suite=Delivery"
 
 echo "================================"
 echo "Target URL: ${TARGET_URL}"
