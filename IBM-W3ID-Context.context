@@ -30,7 +30,7 @@
                 <enabled>true</enabled>
                 <credentials>
                     username=Manoj.Singh8@ibm.com&amp;
-                    password={%password%}
+                    password=JaiShreeSitaRamHanumanG3517
                 </credentials>
             </user>
         </users>
