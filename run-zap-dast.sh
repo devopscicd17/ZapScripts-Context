@@ -17,6 +17,7 @@ zap-baseline.py \
     -j \
     -I \
     -d \
+    -n "/zap/wrk/ZapScripts-Context/IBM-W3ID-Context.context" \
     -r reports/zap-report.html
 
 ls -lh reports
